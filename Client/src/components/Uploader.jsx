@@ -19,7 +19,7 @@ const Uploader = () => {
     if(verifyImage(image)){
       const formData = new FormData();
       formData.append("image", image);
-      const response = await axios.post('http://localhost:3001/uploadimage', formData)
+      const response = await axios.post('https://imageuploaderserver-83xu-dev.fl0.io/uploadimage', formData)
       const res = response.data
       setUrl(res.imageUrl)
       setMessage(res.message)
@@ -59,7 +59,7 @@ const Uploader = () => {
     if(verifyImage(files[0])){
       const formData = new FormData();
       formData.append("image", files[0]);
-      const response = await axios.post('http://localhost:3001/uploadimage', formData)
+      const response = await axios.post('https://imageuploaderserver-83xu-dev.fl0.io/uploadimage', formData)
       console.log(response.data)
       setUrl(response.data.imageUrl)
       setMessage(response.data.message)
